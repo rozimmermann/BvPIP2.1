@@ -1,7 +1,13 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sun Nov  2 12:55:29 2025
+Data loading
 
 @author: Ro
 """
 
+import yaml
+
+with open("config/settings.yaml", "r") as file:
+    config = yaml.safe_load(file)
+
+data_path = config["data_path"]
