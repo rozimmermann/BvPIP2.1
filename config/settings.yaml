@@ -1,4 +1,63 @@
-data_path: "data/raw/dataset.csv"
-model_params:
-  learning_rate: 0.01
-  max_depth: 10
+# Density Analysis
+datasets:
+  - name: iris
+    path: /data/iris.csv
+  - name: titanic
+    path: /data/titanic.csv
+analysis_parameters:
+    feature_columns: ['sepal_length', 'sepal_width', 'petal_length', 'petal_width']
+    target_column: 'species'
+    model: RandomForestClassifier
+    hyperparameters:
+      n_estimators: 100
+      max_depth: 5
+
+---
+
+# Permeation Events Analysis
+datasets:
+  - name: iris
+    path: /data/iris.csv
+  - name: titanic
+    path: /data/titanic.csv
+analysis_parameters:
+    feature_columns: ['sepal_length', 'sepal_width', 'petal_length', 'petal_width']
+    target_column: 'species'
+    model: RandomForestClassifier
+    hyperparameters:
+      n_estimators: 100
+      max_depth: 5
+
+---
+
+# Pf Analysis
+datasets:
+  - name: iris
+    path: /data/iris.csv
+  - name: titanic
+    path: /data/titanic.csv
+analysis_parameters:
+    feature_columns: ['sepal_length', 'sepal_width', 'petal_length', 'petal_width']
+    target_column: 'species'
+    model: RandomForestClassifier
+    hyperparameters:
+      n_estimators: 100
+      max_depth: 5
+
+---
+
+# RMSD Analysis
+datasets:
+  - name: MD1_BvPIP21
+    path: /data/raw/RMSD/MD1_BvPIP2.1.csv
+  - name: MD2_BvPIP21
+    path: /data/raw/RMSD/MD2_BvPIP2.1.csv
+  - name: MD3_BvPIP21
+    path: /data/raw/RMSD/MD3_BvPIP2.1.csv
+analysis_parameters:
+    feature_columns: ['sepal_length', 'sepal_width', 'petal_length', 'petal_width']
+    target_column: 'species'
+    model: RandomForestClassifier
+    hyperparameters:
+      n_estimators: 100
+      max_depth: 5
