@@ -5,13 +5,12 @@ Data loading
 @author: Ro
 """
 
-import yaml
 import re
 import numpy as np
 import pandas as pd
-from decimal import Decimal
-from typing import Literal
 from pathlib import Path
+import precision as pr
+import yaml_loader as yml
 
 
 # -------------------------------------------------------------------
@@ -21,22 +20,9 @@ from pathlib import Path
 ANALYSIS_DATA: dict[str, dict[str, pd.DataFrame]] = {}
 ANALYSIS_PARAMS: dict[str, dict] = {}
 
-
 # -------------------------------------------------------------------
-# Precision modes
-# Decimal allows for extra precision (with slow processing) when needed, 
-# whereas float allows decimal rounding in calculation resulting in 
-# faster processing. These modes were included to provide a more exact 
-# alternative to the default float calculation Python offers, specially 
-# for the Density analysis which resulted in significant differences 
-# otherwise. 
-# -------------------------------------------------------------------
-
-PrecisionMode = Literal["float", "decimal"]
-
-# -------------------------------------------------------------------
-# 1. File-type and content-type dispatch: automatically pick loader 
-#    based on extension and content
+# File-type and content-type dispatch: automatically pick loader 
+# based on extension and content
 # -------------------------------------------------------------------
 
 def smart_read_table(path: Path) -> pd.DataFrame:
@@ -96,55 +82,15 @@ def load_file(path: Path):
         raise ValueError(f"Unsupported file type: {ext}, path={path}")
 
     return load_file._LOADERS[ext](path)
-
-
-# -------------------------------------------------------------------
-# 2. Apply and validate precision mode
-# -------------------------------------------------------------------
-
-def apply_precision_mode(df: pd.DataFrame, mode: PrecisionMode) -> pd.DataFrame:
-    if mode == "float":
-        return df.astype(float)
-
-    if mode == "decimal":
-        return df.astype(str).map(Decimal)
-
-    raise ValueError(f"Unsupported precision mode: {mode}")
-
-
-def validate_dataframe_precision(df: pd.DataFrame, mode: PrecisionMode, *, allow_nan: bool = False,
-    name: str | None = None):
-    label = f" in dataset '{name}'" if name else ""
-
-    if mode == "float":
-        if not df.dtypes.eq("float64").all():
-            raise TypeError(f"Expected float64 columns{label}, found {df.dtypes.to_dict()}")
-
-    elif mode == "decimal":
-        for col in df.columns:
-            series = df[col]
-
-            if not allow_nan and series.isna().any():
-                raise ValueError(f"NaN values detected{label} in column '{col}'.")
-
-            invalid = series.dropna().map(lambda x: not isinstance(x, Decimal))
-            if invalid.any():
-                idx = invalid.idxmax()
-                value = series.loc[idx]
-                raise TypeError(f"Precision validation failed{label} in column '{col}': "
-                    f"value '{value}' (type={type(value).__name__})")
-
-    else:
-        raise ValueError(f"Unsupported precision mode: {mode}")
         
         
 # -------------------------------------------------------------------
-# 2. Flexible dataset loader supporting:
-#    - list format: [{'name': 'iris', 'path': '...'}, ...]
-#    - dict  format: {'MD1': 'file1.csv', 'MD2': 'file2.csv'}
+# Flexible dataset loader supporting:
+#   - list format: [{'name': 'iris', 'path': '...'}, ...]
+#   - dict  format: {'MD1': 'file1.csv', 'MD2': 'file2.csv'}
 # -------------------------------------------------------------------
 
-def load_datasets(datasets_spec, *, default_mode: PrecisionMode = "float"):
+def load_datasets(datasets_spec, *, default_mode: pr.PrecisionMode = "float"):
     
     """
     Returns:
@@ -154,12 +100,12 @@ def load_datasets(datasets_spec, *, default_mode: PrecisionMode = "float"):
 
     def load_one(name: str, spec: dict) -> pd.DataFrame:
             path = Path(spec["path"])
-            mode: PrecisionMode = spec.get("mode", default_mode)
+            mode: pr.PrecisionMode = spec.get("mode", default_mode)
     
             df = load_file(path)
-            df = apply_precision_mode(df, mode)
+            df = pr.apply_precision_mode(df, mode)
     
-            validate_dataframe_precision(df, mode=mode, name=name)
+            pr.validate_dataframe_precision(df, mode=mode, name=name)
     
             return df
 
@@ -223,19 +169,11 @@ def load_analysis_parameters(params: dict | None, *, analysis_name: str, default
 
 
 # -------------------------------------------------------------------
-# Load multiple YAML documents
-# -------------------------------------------------------------------
-def load_yaml_documents(path: str):
-    with open(path, "r") as f:
-        return list(yaml.safe_load_all(f))
-
-
-# -------------------------------------------------------------------
 # Full pipeline: read YAML → load datasets + parameters
 # -------------------------------------------------------------------
 
 def load_analysis_configs(settings_path: str):
-    docs = load_yaml_documents(settings_path)
+    docs = yml.load_yaml_documents(settings_path)
 
     analysis_data: dict[str, dict[str, pd.DataFrame]] = {}
     analysis_params: dict[str, dict] = {}
