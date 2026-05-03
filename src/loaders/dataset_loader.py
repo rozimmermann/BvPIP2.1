@@ -9,8 +9,9 @@ import re
 import numpy as np
 import pandas as pd
 from pathlib import Path
-import precision as pr
-import yaml_loader as yml
+from src.loaders import precision as pr
+from src.loaders import yaml_loader as yml
+from src.utils import metadata_builder as meta
 
 
 # -------------------------------------------------------------------
@@ -116,9 +117,10 @@ def load_datasets(datasets_spec, *, default_mode: pr.PrecisionMode = "float"):
                 raise ValueError(f"Invalid dataset entry: {entry}")
 
             name = entry.get("name") or Path(entry["path"]).stem
-            path = Path(entry["path"])
 
-            datasets[name] = load_one(path)
+            df = load_one(name, entry)
+            df.attrs["metadata"] = meta.parse_dataset_name(name)
+            datasets[name] = df
 
     # Case B — dict format
     elif isinstance(datasets_spec, dict):
@@ -126,12 +128,16 @@ def load_datasets(datasets_spec, *, default_mode: pr.PrecisionMode = "float"):
             if isinstance(spec, str):
                 spec = {"path": spec}
 
-            datasets[name] = load_one(name, spec)
+            df = load_one(name, spec)
+            df.attrs["metadata"] = meta.parse_dataset_name(name)
+            datasets[name] = df
 
     else:
         raise ValueError(f"Unsupported datasets specification type: {type(datasets_spec)}")
 
-    return datasets
+    metadata_index = meta.build_metadata_index(datasets)
+
+    return {"datasets": datasets, "metadata_index": metadata_index}
 
 # -------------------------------------------------------------------
 # Analysis parameters loader & validator
@@ -205,14 +211,20 @@ def main():
 
     ANALYSIS_DATA, ANALYSIS_PARAMS = load_analysis_configs("../../config/settings.yaml")
     
-    for analysis_name in ANALYSIS_DATA:
+    for analysis_name, analysis_bundle in ANALYSIS_DATA.items():
         print(f"\n=== {analysis_name} ===")
         
+        datasets = analysis_bundle["datasets"]
+        metadata_index = analysis_bundle["metadata_index"]
+        
         print("Datasets loaded:") 
-        for dataset_name, df in ANALYSIS_DATA[analysis_name].items():
+        for dataset_name, df in datasets.items():
             print(f"  {dataset_name}: shape={df.shape}")
 
-        print("Analysis parameters:")
+        print("\nMetadata index:")
+        print(metadata_index)
+
+        print("\nAnalysis parameters:")
         for key in ANALYSIS_PARAMS[analysis_name].keys():
             print(f"  - {key}")
     
