@@ -18,8 +18,8 @@ from src.utils import metadata_builder as meta
 # Containers
 # -------------------------------------------------------------------
 
-ANALYSIS_DATA: dict[str, dict[str, pd.DataFrame]] = {}
-ANALYSIS_PARAMS: dict[str, dict] = {}
+analysis_data: dict[str, dict[str, pd.DataFrame]] = {}
+analysis_params: dict[str, dict] = {}
 
 # -------------------------------------------------------------------
 # File-type and content-type dispatch: automatically pick loader 
@@ -209,13 +209,13 @@ def load_analysis_configs(settings_path: str):
         
 def main():
 
-    ANALYSIS_DATA, ANALYSIS_PARAMS = load_analysis_configs("../../config/settings.yaml")
+    analysis_data, analysis_params = load_analysis_configs("../../config/settings.yaml")
     
-    for analysis_name, analysis_bundle in ANALYSIS_DATA.items():
+    for analysis_name in analysis_data:
         print(f"\n=== {analysis_name} ===")
         
-        datasets = analysis_bundle["datasets"]
-        metadata_index = analysis_bundle["metadata_index"]
+        datasets = analysis_data[analysis_name]["datasets"]
+        metadata_index = analysis_data[analysis_name]["metadata_index"]
         
         print("Datasets loaded:") 
         for dataset_name, df in datasets.items():
@@ -225,10 +225,10 @@ def main():
         print(metadata_index)
 
         print("\nAnalysis parameters:")
-        for key in ANALYSIS_PARAMS[analysis_name].keys():
+        for key in analysis_params[analysis_name].keys():
             print(f"  - {key}")
     
-    return ANALYSIS_DATA, ANALYSIS_PARAMS
+    return analysis_data, analysis_params
 
 if __name__ == "__main__":
-    ANALYSIS_DATA, ANALYSIS_PARAMS = main()
+    analysis_data, analysis_params = main()

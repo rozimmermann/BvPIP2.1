@@ -36,9 +36,9 @@ def parse_dataset_name(name: str) -> DatasetMetadata:
     groups = match.groupdict()
 
     return DatasetMetadata(
-        md=int(groups.get("md")) if groups.get("md") else None,
-        chain=groups.get("chain"),
-        dyn_cm=int(groups.get("dyn_cm")) if groups.get("dyn_cm") else None
+        md=int(groups["md"]) if groups["md"] else None,
+        chain=groups["chain"],
+        dyn_cm=int(groups["dyn_cm"]) if groups["dyn_cm"] else None, 
     )
 
 

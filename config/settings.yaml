@@ -1,94 +1,94 @@
 # Conformational Status
 
-analysis_name: Conformational_Status
-default_mode: float
+# analysis_name: Conformational_Status
+# default_mode: float
 
-datasets:                                           # file_name : path
-  'MD1 Chain A': ../../data/raw/Density/MD1_CHAIN-A_BvPIP2.1_AVERAGED.out
-  'MD1 Chain A 6DynCm': ../../data/raw/Density/MD1_6DynCm_CHAIN-A_BvPIP2.1_AVERAGED.out
-  'MD1 Chain A 12DynCm': ../../data/raw/Density/MD1_12DynCm_CHAIN-A_BvPIP2.1_AVERAGED.out
-  'MD1 Chain A 24DynCm': ../../data/raw/Density/MD1_24DynCm_CHAIN-A_BvPIP2.1_AVERAGED.out
-  'MD1 Chain A 50DynCm': ../../data/raw/Density/MD1_50DynCm_CHAIN-A_BvPIP2.1_AVERAGED.out
+# datasets:                                           # file_name : path
+#   'MD1 Chain A': ../../data/raw/Density/MD1_CHAIN-A_BvPIP2.1_AVERAGED.out
+#   'MD1 Chain A 6DynCm': ../../data/raw/Density/MD1_6DynCm_CHAIN-A_BvPIP2.1_AVERAGED.out
+#   'MD1 Chain A 12DynCm': ../../data/raw/Density/MD1_12DynCm_CHAIN-A_BvPIP2.1_AVERAGED.out
+#   'MD1 Chain A 24DynCm': ../../data/raw/Density/MD1_24DynCm_CHAIN-A_BvPIP2.1_AVERAGED.out
+#   'MD1 Chain A 50DynCm': ../../data/raw/Density/MD1_50DynCm_CHAIN-A_BvPIP2.1_AVERAGED.out
   
-  'MD1 Chain B': ../../data/raw/Density/MD1_CHAIN-B_BvPIP2.1_AVERAGED.out
-  'MD1 Chain B 6DynCm': ../../data/raw/Density/MD1_6DynCm_CHAIN-B_BvPIP2.1_AVERAGED.out
-  'MD1 Chain B 12DynCm': ../../data/raw/Density/MD1_12DynCm_CHAIN-B_BvPIP2.1_AVERAGED.out
-  'MD1 Chain B 24DynCm': ../../data/raw/Density/MD1_24DynCm_CHAIN-B_BvPIP2.1_AVERAGED.out
-  'MD1 Chain B 50DynCm': ../../data/raw/Density/MD1_50DynCm_CHAIN-B_BvPIP2.1_AVERAGED.out
+#   'MD1 Chain B': ../../data/raw/Density/MD1_CHAIN-B_BvPIP2.1_AVERAGED.out
+#   'MD1 Chain B 6DynCm': ../../data/raw/Density/MD1_6DynCm_CHAIN-B_BvPIP2.1_AVERAGED.out
+#   'MD1 Chain B 12DynCm': ../../data/raw/Density/MD1_12DynCm_CHAIN-B_BvPIP2.1_AVERAGED.out
+#   'MD1 Chain B 24DynCm': ../../data/raw/Density/MD1_24DynCm_CHAIN-B_BvPIP2.1_AVERAGED.out
+#   'MD1 Chain B 50DynCm': ../../data/raw/Density/MD1_50DynCm_CHAIN-B_BvPIP2.1_AVERAGED.out
   
-  'MD1 Chain C': ../../data/raw/Density/MD1_CHAIN-C_BvPIP2.1_AVERAGED.out
-  'MD1 Chain C 6DynCm': ../../data/raw/Density/MD1_6DynCm_CHAIN-C_BvPIP2.1_AVERAGED.out
-  'MD1 Chain C 12DynCm': ../../data/raw/Density/MD1_12DynCm_CHAIN-C_BvPIP2.1_AVERAGED.out
-  'MD1 Chain C 24DynCm': ../../data/raw/Density/MD1_24DynCm_CHAIN-C_BvPIP2.1_AVERAGED.out
-  'MD1 Chain C 50DynCm': ../../data/raw/Density/MD1_50DynCm_CHAIN-C_BvPIP2.1_AVERAGED.out
+#   'MD1 Chain C': ../../data/raw/Density/MD1_CHAIN-C_BvPIP2.1_AVERAGED.out
+#   'MD1 Chain C 6DynCm': ../../data/raw/Density/MD1_6DynCm_CHAIN-C_BvPIP2.1_AVERAGED.out
+#   'MD1 Chain C 12DynCm': ../../data/raw/Density/MD1_12DynCm_CHAIN-C_BvPIP2.1_AVERAGED.out
+#   'MD1 Chain C 24DynCm': ../../data/raw/Density/MD1_24DynCm_CHAIN-C_BvPIP2.1_AVERAGED.out
+#   'MD1 Chain C 50DynCm': ../../data/raw/Density/MD1_50DynCm_CHAIN-C_BvPIP2.1_AVERAGED.out
   
-  'MD1 Chain D': ../../data/raw/Density/MD1_CHAIN-D_BvPIP2.1_AVERAGED.out
-  'MD1 Chain D 6DynCm': ../../data/raw/Density/MD1_6DynCm_CHAIN-D_BvPIP2.1_AVERAGED.out
-  'MD1 Chain D 12DynCm': ../../data/raw/Density/MD1_12DynCm_CHAIN-D_BvPIP2.1_AVERAGED.out
-  'MD1 Chain D 24DynCm': ../../data/raw/Density/MD1_24DynCm_CHAIN-D_BvPIP2.1_AVERAGED.out
-  'MD1 Chain D 50DynCm': ../../data/raw/Density/MD1_50DynCm_CHAIN-D_BvPIP2.1_AVERAGED.out
+#   'MD1 Chain D': ../../data/raw/Density/MD1_CHAIN-D_BvPIP2.1_AVERAGED.out
+#   'MD1 Chain D 6DynCm': ../../data/raw/Density/MD1_6DynCm_CHAIN-D_BvPIP2.1_AVERAGED.out
+#   'MD1 Chain D 12DynCm': ../../data/raw/Density/MD1_12DynCm_CHAIN-D_BvPIP2.1_AVERAGED.out
+#   'MD1 Chain D 24DynCm': ../../data/raw/Density/MD1_24DynCm_CHAIN-D_BvPIP2.1_AVERAGED.out
+#   'MD1 Chain D 50DynCm': ../../data/raw/Density/MD1_50DynCm_CHAIN-D_BvPIP2.1_AVERAGED.out
   
 
-  'MD2 Chain A': ../../data/raw/Density/MD2_CHAIN-A_BvPIP2.1_AVERAGED.out
-  'MD2 Chain A 6DynCm': ../../data/raw/Density/MD2_6DynCm_CHAIN-A_BvPIP2.1_AVERAGED.out
-  'MD2 Chain A 12DynCm': ../../data/raw/Density/MD2_12DynCm_CHAIN-A_BvPIP2.1_AVERAGED.out
-  'MD2 Chain A 24DynCm': ../../data/raw/Density/MD2_24DynCm_CHAIN-A_BvPIP2.1_AVERAGED.out
-  'MD2 Chain A 50DynCm': ../../data/raw/Density/MD2_50DynCm_CHAIN-A_BvPIP2.1_AVERAGED.out
+#   'MD2 Chain A': ../../data/raw/Density/MD2_CHAIN-A_BvPIP2.1_AVERAGED.out
+#   'MD2 Chain A 6DynCm': ../../data/raw/Density/MD2_6DynCm_CHAIN-A_BvPIP2.1_AVERAGED.out
+#   'MD2 Chain A 12DynCm': ../../data/raw/Density/MD2_12DynCm_CHAIN-A_BvPIP2.1_AVERAGED.out
+#   'MD2 Chain A 24DynCm': ../../data/raw/Density/MD2_24DynCm_CHAIN-A_BvPIP2.1_AVERAGED.out
+#   'MD2 Chain A 50DynCm': ../../data/raw/Density/MD2_50DynCm_CHAIN-A_BvPIP2.1_AVERAGED.out
   
-  'MD2 Chain B': ../../data/raw/Density/MD2_CHAIN-B_BvPIP2.1_AVERAGED.out
-  'MD2 Chain B 6DynCm': ../../data/raw/Density/MD2_6DynCm_CHAIN-B_BvPIP2.1_AVERAGED.out
-  'MD2 Chain B 12DynCm': ../../data/raw/Density/MD2_12DynCm_CHAIN-B_BvPIP2.1_AVERAGED.out
-  'MD2 Chain B 24DynCm': ../../data/raw/Density/MD2_24DynCm_CHAIN-B_BvPIP2.1_AVERAGED.out
-  'MD2 Chain B 50DynCm': ../../data/raw/Density/MD2_50DynCm_CHAIN-B_BvPIP2.1_AVERAGED.out
+#   'MD2 Chain B': ../../data/raw/Density/MD2_CHAIN-B_BvPIP2.1_AVERAGED.out
+#   'MD2 Chain B 6DynCm': ../../data/raw/Density/MD2_6DynCm_CHAIN-B_BvPIP2.1_AVERAGED.out
+#   'MD2 Chain B 12DynCm': ../../data/raw/Density/MD2_12DynCm_CHAIN-B_BvPIP2.1_AVERAGED.out
+#   'MD2 Chain B 24DynCm': ../../data/raw/Density/MD2_24DynCm_CHAIN-B_BvPIP2.1_AVERAGED.out
+#   'MD2 Chain B 50DynCm': ../../data/raw/Density/MD2_50DynCm_CHAIN-B_BvPIP2.1_AVERAGED.out
   
-  'MD2 Chain C': ../../data/raw/Density/MD2_CHAIN-C_BvPIP2.1_AVERAGED.out
-  'MD2 Chain C 6DynCm': ../../data/raw/Density/MD2_6DynCm_CHAIN-C_BvPIP2.1_AVERAGED.out
-  'MD2 Chain C 12DynCm': ../../data/raw/Density/MD2_12DynCm_CHAIN-C_BvPIP2.1_AVERAGED.out
-  'MD2 Chain C 24DynCm': ../../data/raw/Density/MD2_24DynCm_CHAIN-C_BvPIP2.1_AVERAGED.out
-  'MD2 Chain C 50DynCm': ../../data/raw/Density/MD2_50DynCm_CHAIN-C_BvPIP2.1_AVERAGED.out
+#   'MD2 Chain C': ../../data/raw/Density/MD2_CHAIN-C_BvPIP2.1_AVERAGED.out
+#   'MD2 Chain C 6DynCm': ../../data/raw/Density/MD2_6DynCm_CHAIN-C_BvPIP2.1_AVERAGED.out
+#   'MD2 Chain C 12DynCm': ../../data/raw/Density/MD2_12DynCm_CHAIN-C_BvPIP2.1_AVERAGED.out
+#   'MD2 Chain C 24DynCm': ../../data/raw/Density/MD2_24DynCm_CHAIN-C_BvPIP2.1_AVERAGED.out
+#   'MD2 Chain C 50DynCm': ../../data/raw/Density/MD2_50DynCm_CHAIN-C_BvPIP2.1_AVERAGED.out
   
-  'MD2 Chain D': ../../data/raw/Density/MD2_CHAIN-D_BvPIP2.1_AVERAGED.out
-  'MD2 Chain D 6DynCm': ../../data/raw/Density/MD2_6DynCm_CHAIN-D_BvPIP2.1_AVERAGED.out
-  'MD2 Chain D 12DynCm': ../../data/raw/Density/MD2_12DynCm_CHAIN-D_BvPIP2.1_AVERAGED.out
-  'MD2 Chain D 24DynCm': ../../data/raw/Density/MD2_24DynCm_CHAIN-D_BvPIP2.1_AVERAGED.out
-  'MD2 Chain D 50DynCm': ../../data/raw/Density/MD2_50DynCm_CHAIN-D_BvPIP2.1_AVERAGED.out
+#   'MD2 Chain D': ../../data/raw/Density/MD2_CHAIN-D_BvPIP2.1_AVERAGED.out
+#   'MD2 Chain D 6DynCm': ../../data/raw/Density/MD2_6DynCm_CHAIN-D_BvPIP2.1_AVERAGED.out
+#   'MD2 Chain D 12DynCm': ../../data/raw/Density/MD2_12DynCm_CHAIN-D_BvPIP2.1_AVERAGED.out
+#   'MD2 Chain D 24DynCm': ../../data/raw/Density/MD2_24DynCm_CHAIN-D_BvPIP2.1_AVERAGED.out
+#   'MD2 Chain D 50DynCm': ../../data/raw/Density/MD2_50DynCm_CHAIN-D_BvPIP2.1_AVERAGED.out
   
   
-  'MD3 Chain A': ../../data/raw/Density/MD3_CHAIN-A_BvPIP2.1_AVERAGED.out
-  'MD3 Chain A 6DynCm': ../../data/raw/Density/MD3_6DynCm_CHAIN-A_BvPIP2.1_AVERAGED.out
-  'MD3 Chain A 12DynCm': ../../data/raw/Density/MD3_12DynCm_CHAIN-A_BvPIP2.1_AVERAGED.out
-  'MD3 Chain A 24DynCm': ../../data/raw/Density/MD3_24DynCm_CHAIN-A_BvPIP2.1_AVERAGED.out
-  'MD3 Chain A 50DynCm': ../../data/raw/Density/MD3_50DynCm_CHAIN-A_BvPIP2.1_AVERAGED.out
+#   'MD3 Chain A': ../../data/raw/Density/MD3_CHAIN-A_BvPIP2.1_AVERAGED.out
+#   'MD3 Chain A 6DynCm': ../../data/raw/Density/MD3_6DynCm_CHAIN-A_BvPIP2.1_AVERAGED.out
+#   'MD3 Chain A 12DynCm': ../../data/raw/Density/MD3_12DynCm_CHAIN-A_BvPIP2.1_AVERAGED.out
+#   'MD3 Chain A 24DynCm': ../../data/raw/Density/MD3_24DynCm_CHAIN-A_BvPIP2.1_AVERAGED.out
+#   'MD3 Chain A 50DynCm': ../../data/raw/Density/MD3_50DynCm_CHAIN-A_BvPIP2.1_AVERAGED.out
   
-  'MD3 Chain B': ../../data/raw/Density/MD3_CHAIN-B_BvPIP2.1_AVERAGED.out
-  'MD3 Chain B 6DynCm': ../../data/raw/Density/MD3_6DynCm_CHAIN-B_BvPIP2.1_AVERAGED.out
-  'MD3 Chain B 12DynCm': ../../data/raw/Density/MD3_12DynCm_CHAIN-B_BvPIP2.1_AVERAGED.out
-  'MD3 Chain B 24DynCm': ../../data/raw/Density/MD3_24DynCm_CHAIN-B_BvPIP2.1_AVERAGED.out
-  'MD3 Chain B 50DynCm': ../../data/raw/Density/MD3_50DynCm_CHAIN-B_BvPIP2.1_AVERAGED.out
+#   'MD3 Chain B': ../../data/raw/Density/MD3_CHAIN-B_BvPIP2.1_AVERAGED.out
+#   'MD3 Chain B 6DynCm': ../../data/raw/Density/MD3_6DynCm_CHAIN-B_BvPIP2.1_AVERAGED.out
+#   'MD3 Chain B 12DynCm': ../../data/raw/Density/MD3_12DynCm_CHAIN-B_BvPIP2.1_AVERAGED.out
+#   'MD3 Chain B 24DynCm': ../../data/raw/Density/MD3_24DynCm_CHAIN-B_BvPIP2.1_AVERAGED.out
+#   'MD3 Chain B 50DynCm': ../../data/raw/Density/MD3_50DynCm_CHAIN-B_BvPIP2.1_AVERAGED.out
   
-  'MD3 Chain C': ../../data/raw/Density/MD3_CHAIN-C_BvPIP2.1_AVERAGED.out
-  'MD3 Chain C 6DynCm': ../../data/raw/Density/MD3_6DynCm_CHAIN-C_BvPIP2.1_AVERAGED.out
-  'MD3 Chain C 12DynCm': ../../data/raw/Density/MD3_12DynCm_CHAIN-C_BvPIP2.1_AVERAGED.out
-  'MD3 Chain C 24DynCm': ../../data/raw/Density/MD3_24DynCm_CHAIN-C_BvPIP2.1_AVERAGED.out
-  'MD3 Chain C 50DynCm': ../../data/raw/Density/MD3_50DynCm_CHAIN-C_BvPIP2.1_AVERAGED.out
+#   'MD3 Chain C': ../../data/raw/Density/MD3_CHAIN-C_BvPIP2.1_AVERAGED.out
+#   'MD3 Chain C 6DynCm': ../../data/raw/Density/MD3_6DynCm_CHAIN-C_BvPIP2.1_AVERAGED.out
+#   'MD3 Chain C 12DynCm': ../../data/raw/Density/MD3_12DynCm_CHAIN-C_BvPIP2.1_AVERAGED.out
+#   'MD3 Chain C 24DynCm': ../../data/raw/Density/MD3_24DynCm_CHAIN-C_BvPIP2.1_AVERAGED.out
+#   'MD3 Chain C 50DynCm': ../../data/raw/Density/MD3_50DynCm_CHAIN-C_BvPIP2.1_AVERAGED.out
   
-  'MD3 Chain D': ../../data/raw/Density/MD3_CHAIN-D_BvPIP2.1_AVERAGED.out
-  'MD3 Chain D 6DynCm': ../../data/raw/Density/MD3_6DynCm_CHAIN-D_BvPIP2.1_AVERAGED.out
-  'MD3 Chain D 12DynCm': ../../data/raw/Density/MD3_12DynCm_CHAIN-D_BvPIP2.1_AVERAGED.out
-  'MD3 Chain D 24DynCm': ../../data/raw/Density/MD3_24DynCm_CHAIN-D_BvPIP2.1_AVERAGED.out
-  'MD3 Chain D 50DynCm': ../../data/raw/Density/MD3_50DynCm_CHAIN-D_BvPIP2.1_AVERAGED.out
+#   'MD3 Chain D': ../../data/raw/Density/MD3_CHAIN-D_BvPIP2.1_AVERAGED.out
+#   'MD3 Chain D 6DynCm': ../../data/raw/Density/MD3_6DynCm_CHAIN-D_BvPIP2.1_AVERAGED.out
+#   'MD3 Chain D 12DynCm': ../../data/raw/Density/MD3_12DynCm_CHAIN-D_BvPIP2.1_AVERAGED.out
+#   'MD3 Chain D 24DynCm': ../../data/raw/Density/MD3_24DynCm_CHAIN-D_BvPIP2.1_AVERAGED.out
+#   'MD3 Chain D 50DynCm': ../../data/raw/Density/MD3_50DynCm_CHAIN-D_BvPIP2.1_AVERAGED.out
   
-analysis_parameters:
+# analysis_parameters:
 
-  conformational:
-    gate_threshold: 4.0
-    gate_column: "gate_distance"
+#   conformational:
+#     gate_threshold: 4.0
+#     gate_column: "gate_distance"
 
-  preprocessing:
-    calculate_dpe: true
-    calculate_dpe_dt: true
+#   preprocessing:
+#     calculate_dpe: true
+#     calculate_dpe_dt: true
 
----
+# ---
 
 # Density Analysis
 
