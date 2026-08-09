@@ -5,10 +5,10 @@ Created on Mon Mar 30 16:32:21 2026
 @author: Ro
 """
 
-from loaders.yaml_loader import load_yaml_documents
-from loaders.dataset_loader import load_datasets
-from analysis.registry import analysis_registry
-from plots.registry import plot_registry
+from yaml_loader import load_yaml_documents
+from dataset_loader import load_datasets
+from registry import analysis_registry
+from registry import plot_registry
 
 
 def run_pipeline(settings_path):

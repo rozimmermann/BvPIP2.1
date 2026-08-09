@@ -8,7 +8,8 @@ Created on Mon Aug  3 17:19:12 2026
 import pandas as pd
 
 
-def preprocess_conformational_data(df: pd.DataFrame, *, gate_threshold: float = 4.0) -> pd.DataFrame:
+def preprocess_conformational_data(df: pd.DataFrame, *, 
+                                   gate_threshold: float = 4.0) -> pd.DataFrame:
 
     df = df.copy()
 
@@ -24,17 +25,16 @@ def preprocess_conformational_data(df: pd.DataFrame, *, gate_threshold: float = 
     return df
 
 
-def classify_conformation(gate_distance: pd.Series, *, threshold: float = 4.0) -> pd.Series:
+def classify_conformation(df: pd.DataFrame, *,
+                          gate_distance: str, threshold: float) -> pd.DataFrame:
 
-    return gate_distance < threshold
+    result = df.copy()
 
+    result["is_closed"] = (result[gate_distance] < threshold)
 
-df["gate_flipped"] = classify_conformation(
-    df["gate_distance"],
-    threshold=4.0,
-)
-
-# df["is_closed"] = df["gate_distance"] < threshold
+    return result
+# Determines gate status: open or closed (= "gate flipped"), based on threshold 
+# value given in YAML settings file. 
 
 # open_data = df[~df["is_closed"]]
 # closed_data = df[df["is_closed"]]
