@@ -39,19 +39,20 @@ def smart_read_table(path: Path) -> pd.DataFrame:
             if line.startswith("#"):
                 raw = line.lstrip("#").strip()
 
-                # Caso 1: header con |
-                if "|" in raw:
-                    header = [h.strip() for h in raw.split("|")]
-                else:
-                    # Caso 2: header alineado por espacios
-                    header = re.split(r"\s{2,}", raw)
+            # Case 1: pipe-separated header
+            if "|" in raw:
+                header = [h.strip() for h in raw.split("|")]
+            
+            # Case 2: space-aligned header
+            else:
+                header = re.split(r"\s{2,}", raw)
 
                 break
 
     if header is None:
         raise ValueError(f"No header found in file: {path}")    
 
-    df = pd.read_csv(path, sep=r"\s+", engine="python", comment="#",
+    df = pd.read_csv(path, sep=r"\s+", comment="#",
         skip_blank_lines=True, header=None, names=header)
 
     # Normalización de nombres de columnas
@@ -103,7 +104,7 @@ def load_datasets(datasets_spec, *, default_mode: pr.PrecisionMode = "float"):
             path = Path(spec["path"])
             mode: pr.PrecisionMode = spec.get("mode", default_mode)
     
-            df = load_file(path)
+            df = load_file(path)          
             df = pr.apply_precision_mode(df, mode)
     
             pr.validate_dataframe_precision(df, mode=mode, name=name)
